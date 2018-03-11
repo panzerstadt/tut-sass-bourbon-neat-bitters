@@ -1,0 +1,66 @@
+$_button-background-color: $action-color;
+$_button-background-color-hover: shade($action-color, 20%);
+
+#{$all-buttons},
+.button {
+  appearance: none;
+  background-color: $_button-background-color;
+  border: 0;
+  border-radius: $base-border-radius;
+  color: contrast-switch($_button-background-color);
+  cursor: pointer;
+  display: inline-block;
+  font-family: $base-font-family;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: $small-spacing $base-spacing;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color $base-duration $base-timing;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $_button-background-color-hover;
+    color: contrast-switch($_button-background-color-hover);
+  }
+
+  &:focus {
+    outline: $focus-outline;
+    outline-offset: $focus-outline-offset;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $_button-background-color;
+    }
+  }
+}
+
+.button--twitter{
+    @include size(58px);
+    background: #5AA4D4 url(../img/icons-social.svg) -132px 19px no-repeat;
+  }
+
+.button--rss {
+  @include size(58px);
+  width: 152px;
+  background: #FFA763 url(../img/icon-rss.svg) 16px center no-repeat;
+  padding-left: 50px;
+  margin-left: 11px;
+  line-height: 28px;
+  font-size: $article-font-size;
+  color: white;
+}
+
+.button--try {
+  border: 2px solid $red;
+  background-color: transparent;
+  color: $red;
+}
